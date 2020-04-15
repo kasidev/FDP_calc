@@ -1,0 +1,24 @@
+FDP_calc 0.1:
+    Setup:
+        ☐ Git Setup Desktop
+        ☐ Git Setup Laptop
+        ☐ Git Setup Server
+        ☐ Get and install starter webpack
+        ☐ Get and install starter server
+        ☐ Get jest
+        ☐ Get babbel
+        ☐ Get Moment.js
+
+    HTML:
+        Try to write HTML for the following elements
+        ☐ Input Time Zone
+        Set Standard to UTC
+        ☐ Input Start of FDP
+        ☐ Input Number of Legs
+        ☐ Input Split Duty
+        ☐ Input Split Duty Break
+        ☐ Input Start calculation Button
+
+        ☐ Output latest ETA
+
+
