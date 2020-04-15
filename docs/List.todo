@@ -1,7 +1,7 @@
 FDP_calc 0.1:
     Setup:
-        ☐ Git Setup Desktop
-        ☐ Git Setup Laptop
+        ✔ Git Setup Desktop @done(20-04-15 13:27)
+        ✔ Git Setup Laptop @done(20-04-15 13:27)
         ☐ Git Setup Server
         ☐ Get and install starter webpack
         ☐ Get and install starter server

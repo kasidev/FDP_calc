@@ -8,4 +8,4 @@ Make Setup for UTC calculation according EASA FDP including the following:
     -calculate all times with Moment.js and the respective timezone
     -calculate all in UTC
 
-Webapp should be available on www.fdp_calc.dev.kasiala.ch by 26.04.2020 21:59 UTC
+Webapp should be available on www.fdp_calc.dev.kasiala.ch by 26.APR.2020 21:59 UTC
