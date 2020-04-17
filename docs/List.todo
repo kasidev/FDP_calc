@@ -11,15 +11,47 @@ FDP_calc 0.1:
 
     HTML:
         Try to write HTML for the following elements
-        ☐ Input Time Zone
+        ☐ Input Time Zone - fixed value 'UTC'
         Set Standard to UTC
         ☐ Input Start of FDP
         ☐ Input Number of Legs
-        ☐ Input Split Duty
-        ☐ Input Split Duty Break
+        ☐ Input Start location
+        ☐ Input Split Duty - fixed value 'FALSE'
+        ☐ Input Split Duty Break - fixed value NIL
         ☐ Input Start calculation Button
 
         ☐ Output latest ETA
+
+    JS:
+        ☐ Get moment JS
+        npm install moment --save
+        npm install moment-timezone --save
+        ☐ Read moment docu
+
+        ☐ Set default values for
+            ☐ Start of FDP
+            ☐ Number of legs
+            ☐ Start location
+        ☐ Eventlistener on Start calculation button
+        ☐ Get user values
+        Write lookup function:
+            ☐ Write easa_04_2020_fdp_max.json
+
+            getuserinput control:
+                ☐ Get input timezone
+                ☐ Get input start of FDP
+
+            ☐ Calculate Start of FDP in Local time
+            ☐ Get start hour and start minute
+            do this in convert control
+            lookup control:
+                ☐ lookup max FDP in easa_04_2020_fdp_max.json
+                ☐ calculate eta in localtime
+
+            convert control:
+                ☐ convert eta to utc and requested timezone
+
+        ☐ Write output to DOM
 
     
 
