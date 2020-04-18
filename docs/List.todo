@@ -3,22 +3,22 @@ FDP_calc 0.1:
         ✔ Git Setup Desktop @done(20-04-15 13:27)
         ✔ Git Setup Laptop @done(20-04-15 13:27)
         ☐ Git Setup Server
-        ☐ Get and install starter webpack
+        ✔ Get and install starter webpack @done(20-04-18 12:32)
         ☐ Get and install starter server
-        ☐ Get jest
+        ✔ Get jest @done(20-04-18 12:32)
         ☐ Get babbel
         ☐ Get Moment.js
 
     HTML:
         Try to write HTML for the following elements
-        ☐ Input Time Zone - fixed value 'UTC'
+        ✔ Input Time Zone - fixed value 'UTC' @done(20-04-18 13:13)
         Set Standard to UTC
-        ☐ Input Start of FDP
-        ☐ Input Number of Legs
-        ☐ Input Start location
-        ☐ Input Split Duty - fixed value 'FALSE'
-        ☐ Input Split Duty Break - fixed value NIL
-        ☐ Input Start calculation Button
+        ✔ Input Start of FDP @done(20-04-18 13:13)
+        ✔ Input Number of Legs @done(20-04-18 13:15)
+        ✔ Input Start location @done(20-04-18 13:17)
+        ✔ Input Split Duty - fixed value 'FALSE' @done(20-04-18 13:22)
+        ✔ Input Split Duty Break - fixed value NIL @done(20-04-18 13:22)
+        ✔ Input Start calculation Button @done(20-04-18 13:22)
 
         ☐ Output latest ETA
 

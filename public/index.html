@@ -12,7 +12,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Nährwertrechner</a>
+      <a class="navbar-brand" href="#">Flight time period calculator</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,34 +29,64 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6" id="input col">
           <div class="card">
             <div class="card-header">
-              Neues Produkt hinzufügen:
+              Input Data
             </div>
             <div class="card-body">
               <form>
                 <div class="form-group">
-                  <label for="productSearchInput">Produkt suchen:</label>
-                  <input type="text" class="form-control" id="productSearchInput" />
+                  <label for="timezoneInput">Input Time Zone:</label>
+                  <input type="text" class="form-control" id="timezoneInput" value="UTC" />
                 </div>
-                <button id="productSearchButton" type="submit" class="btn btn-primary">Suchen!</button>
+                <div class="form-group">
+                  <label for="fdpstartdateInput">FDP Start date:</label>
+                  <input type="date" class="form-control" id="productSearchInput" />         
+                </div>
+                <div class="form-group">
+                  <label for="fdpstarttimeInput">FDP Start time:</label>
+                  <input type="time" class="form-control" id="fdpstartdateInput" />         
+                </div>
+                <div class="form-group">
+                  <label for="legsInput">Number of legs:</label>
+                  <input type="number" class="form-control" id="legsInput" min="1" max="20" />         
+                </div>
+                <div class="form-group">
+                  <label for="departureLocationInput">Departure:</label>
+                  <input type="text" class="form-control" id="departureLocationInput" value="LSZH" />         
+                </div>
+                <div class="form-group">
+                  <label for="arrivalLocationInput">Arrival:</label>
+                  <input type="text" class="form-control" id="arrivalLocationInput" value="LSZH" />         
+                </div>
+                <div class="form-group">
+                  <label for="splitdutyInput">Splitduty:</label>
+                  <input type="checkbox" class="form-control" id="splitdutyInput" />         
+                </div>
+                <div class="form-group">
+                  <label for="splitdutystartInput">Splitduty break start:</label>
+                  <input type="datetime-local" class="form-control" id="splitdutystartInput" />         
+                </div>
+                <div class="form-group">
+                  <label for="splitdutyendInput">Splitduty break end:</label>
+                  <input type="datetime-local" class="form-control" id="splitdutyendInput" />         
+                </div>
+                
+                <button id="calculateButton" type="submit" class="btn btn-primary">Calculate</button>
               </form>
-            </div>
-            <div class="list-group list-group-flush" id="productSearchResults"></div>
-          </div>
         </div>
 
         <div class="col-md-6">
           <div class="card">
             <div class="card-header">
-              Produkte:
+              Results
             </div>
             <table class="table mb-0">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th style="width: 8rem">Menge (in g)</th>
+                  <th>Timezone</th>
+                  <th style="width: 8rem">Date</th>
                 </tr>
               </thead>
               <tbody id="productList">
@@ -80,6 +110,43 @@
               </li>
             </ul>
           </div>
+        </div>
+          </div>
+        </div>
+        <div class="col-md-6" id="result col">
+          <div class="card">
+            <div class="card-header">
+              Results
+            </div>
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th>Timezone</th>
+                  <th style="width: 15rem">Date</th>
+                </tr>
+              </thead>
+              <tbody id="productList">
+                <tr>
+                  <td>UTC</td>
+                  <td> 05.08.2020 15:00</td>
+                </tr>
+
+                <tr>
+                  <td>Europe/Zurich</td>
+                  <td>05.08.2020 17:00</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div> 
+      <div class="row">
+        <div class="row col-md-6">
+
+        </div>
+        <div class="row col-md-6">
+
         </div>
       </div>
     </div>
