@@ -20,7 +20,7 @@ FDP_calc 0.1:
         ✔ Input Split Duty Break - fixed value NIL @done(20-04-18 13:22)
         ✔ Input Start calculation Button @done(20-04-18 13:22)
 
-        ☐ Output latest ETA
+        ✔ Output latest ETA @done(20-04-18 15:25)
 
     JS:
         ☐ Get moment JS

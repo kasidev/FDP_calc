@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/public/dist/main.css" />
 
-    <title>Hello, world!</title>
+    <title>FDP CALC</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,8 +37,19 @@
             <div class="card-body">
               <form>
                 <div class="form-group">
+                  <label for="RegulationInput">Regulation:</label>
+                  <input type="text" class="form-control" id="timezoneInput" value="EASA FTL" />
+                </div>
+                <div class="form-group">
                   <label for="timezoneInput">Input Time Zone:</label>
-                  <input type="text" class="form-control" id="timezoneInput" value="UTC" />
+                  <select class="form-control" id="timezoneInput">
+                    <option>UTC/ZULU</option>
+                    <option>Europe/Zurich</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="standbyInput">Standby Duty :</label>
+                  <input type="checkbox" class="form-control" id="splitdutyInput" />
                 </div>
                 <div class="form-group">
                   <label for="fdpstartdateInput">FDP Start date:</label>
@@ -54,11 +65,19 @@
                 </div>
                 <div class="form-group">
                   <label for="departureLocationInput">Departure:</label>
-                  <input type="text" class="form-control" id="departureLocationInput" value="LSZH" />         
+                  <select class="form-control" id="departureLocationInput">
+                    <option>LSZH</option>
+                    <option>LSMD</option>
+                    <option>EGLC</option>
+                  </select>        
                 </div>
                 <div class="form-group">
                   <label for="arrivalLocationInput">Arrival:</label>
-                  <input type="text" class="form-control" id="arrivalLocationInput" value="LSZH" />         
+                  <select class="form-control" id="arrivalLocationInput">
+                    <option>LSZH</option>
+                    <option>LSMD</option>
+                    <option>EGLC</option>
+                  </select>         
                 </div>
                 <div class="form-group">
                   <label for="splitdutyInput">Splitduty:</label>
@@ -66,57 +85,22 @@
                 </div>
                 <div class="form-group">
                   <label for="splitdutystartInput">Splitduty break start:</label>
-                  <input type="datetime-local" class="form-control" id="splitdutystartInput" />         
+                  <input type="datetime-local" class="form-control" id="splitdutystartInput" value="2018-06-12T19:30" />         
                 </div>
                 <div class="form-group">
                   <label for="splitdutyendInput">Splitduty break end:</label>
-                  <input type="datetime-local" class="form-control" id="splitdutyendInput" />         
+                  <input type="datetime-local" class="form-control" id="splitdutyendInput" value="2018-06-12T19:30" />         
                 </div>
                 
                 <button id="calculateButton" type="submit" class="btn btn-primary">Calculate</button>
               </form>
-        </div>
-
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">
-              Results
             </div>
-            <table class="table mb-0">
-              <thead>
-                <tr>
-                  <th>Timezone</th>
-                  <th style="width: 8rem">Date</th>
-                </tr>
-              </thead>
-              <tbody id="productList">
-
-              </tbody>
-            </table>
-          </div>
-          <div class="card mt-2">
-            <div class="card-header">
-              Nährwerte:
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                Kohlenhydrate: <span id="productNutrient--carbs">0</span>g
-              </li>
-              <li class="list-group-item">
-                Protein: <span id="productNutrient--protein">0</span>g
-              </li>
-              <li class="list-group-item">
-                Fett: <span id="productNutrient--fat">0</span>g
-              </li>
-            </ul>
-          </div>
-        </div>
           </div>
         </div>
         <div class="col-md-6" id="result col">
           <div class="card">
             <div class="card-header">
-              Results
+              Latest ETA
             </div>
             <table class="table mb-0">
               <thead>
@@ -127,7 +111,7 @@
               </thead>
               <tbody id="productList">
                 <tr>
-                  <td>UTC</td>
+                  <td>UTC/ZULU</td>
                   <td> 05.08.2020 15:00</td>
                 </tr>
 
