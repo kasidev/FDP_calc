@@ -23,7 +23,7 @@ FDP_calc 0.1:
         ✔ Output latest ETA @done(20-04-18 15:25)
 
     JS:
-        ☐ Get moment JS
+        ✔ Get moment JS @done(20-04-18 15:32)
         npm install moment --save
         npm install moment-timezone --save
         ☐ Read moment docu
