@@ -2,6 +2,7 @@
 require("../scss/index.scss")
 
 const GetInputData = require("./controllers/GetInputData")
+const dataTimes = require("./data/times.json")
 
 const getInputData = new GetInputData(
     {
