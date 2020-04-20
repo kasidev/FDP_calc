@@ -39,7 +39,9 @@ FDP_calc 0.1:
 
             getuserinput control:
                 ☐ Get input timezone
+
                 ☐ Get input start of FDP
+                moment('2016-01-01T00:00:00+02:00').format()
 
             ☐ Calculate Start of FDP in Local time
             ☐ Get start hour and start minute
