@@ -38,7 +38,7 @@ FDP_calc 0.1:
             ☐ Write easa_04_2020_fdp_max.json
 
             getuserinput control:
-                ☐ Get input timezone
+                ✔ Get input timezone @done(20-04-20 18:12)
 
                 ☐ Get input start of FDP
                 moment('2016-01-01T00:00:00+02:00').format()
