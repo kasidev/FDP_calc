@@ -4,20 +4,7 @@ const moment = require("moment")
 const momentTZ = require('moment-timezone')
 const EventEmitter = require("eventemitter3")
 const dataTimes = require("../data/times.json")
-/*
- * @param {HTMLInputElement} input_tz
- * @param {HTMLInputElement} input_standby
- * @param {HTMLInputElement} input_standby_start
- * @param {HTMLInputElement} input_standby_end
- * @param {HTMLInputElement} input_fdp_start_dat
- * @param {HTMLInputElement} input_fdp_start_tim
- * @param {HTMLInputElement} input_legs
- * @param {HTMLInputElement} input_dep
- * @param {HTMLInputElement} input_arr
- * @param {HTMLInputElement} input_split
- * @param {HTMLInputElement} input_split_start
- * @param {HTMLInputElement} input_split_end
-*/
+
 
 /**
  * @param {JSON} input_Elements
@@ -40,21 +27,13 @@ GetInputData.prototype.startToLocal = function(){
          this.input_elements.fdpStartTime) 
          fdpStart = moment.tz(fdpStart,"YYYY-MM-DD hh:mm",
          this.input_elements.tz )
-         dataTimes.fdpStartUTC
-         dataTimes.fdpStartUTC=fdpStart  
+         dataTimes.fdpStartMoment=fdpStart  
          
         
     }
-    console.log("input fdp : ", dataTimes.fdpStartUTC.utc().format())
+    console.log("input fdp : ", dataTimes.fdpStartMoment.utc().format())
 }
-/*
-let a = moment()
-console.log(a.format(),"//moment().format()")
-console.log(a.tz("America/Toronto").format())
-console.log(a.utc().format())
-console.log(moment.tz.names())
 
-*/
 
 
 
