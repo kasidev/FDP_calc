@@ -6,8 +6,8 @@ FDP_calc 0.1:
         ✔ Get and install starter webpack @done(20-04-18 12:32)
         ☐ Get and install starter server
         ✔ Get jest @done(20-04-18 12:32)
-        ☐ Get babbel
-        ☐ Get Moment.js
+        ✔ Get babbel @done(20-04-21 16:24)
+        ✔ Get Moment.js @done(20-04-21 16:24)
 
     HTML:
         Try to write HTML for the following elements
@@ -28,12 +28,12 @@ FDP_calc 0.1:
         npm install moment-timezone --save
         ✔ Read moment docu @done(20-04-20 17:03)
 
-        ☐ Set default values for
-            ☐ Start of FDP
-            ☐ Number of legs
-            ☐ Start location
-        ☐ Eventlistener on Start calculation button
-        ☐ Get user values
+        ✘ Set default values for @cancelled(20-04-21 16:24)
+            ✘ Start of FDP @cancelled(20-04-21 16:24)
+            ✘ Number of legs @cancelled(20-04-21 16:24)
+            ✘ Start location @cancelled(20-04-21 16:24)
+        ✔ Eventlistener on Start calculation button @done(20-04-21 16:24)
+        ✔ Get user values @done(20-04-21 16:24)
         Write lookup function:
             ☐ Write easa_04_2020_fdp_max.json
 
@@ -48,15 +48,19 @@ FDP_calc 0.1:
             achived with momentjs
             lookup control:
                 ✔ lookup max FDP in easa_04_2020_fdp_max.json @done(20-04-21 15:13)
-                ☐ calculate eta in localtime
+                ✔ calculate eta in localtime @done(20-04-21 16:24)
 
             convert control:
-                ☐ convert eta to utc and requested timezone
+                ✔ convert eta to utc and requested timezone @done(20-04-21 16:24)
 
 
-        ☐ Write output to DOM
+        ✔ Write output to DOM @done(20-04-21 16:24)
 
-        
+FDP_calc 0.2:
+    ☐ get rid of times.json
+    save data in html as attribute
+
+
     
 
 
