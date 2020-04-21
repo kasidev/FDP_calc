@@ -4,6 +4,7 @@ require("../scss/index.scss")
 const GetInputData = require("./controllers/GetInputData")
 const Calculate = require("./controllers/Calculate")
 const Lookup = require("./controllers/Lookup")
+const MenuControl = require("./controllers/MenuControl")
 const dataTimes = require("./data/times.json")
 
 let input_data=  {
@@ -30,6 +31,10 @@ const calculate = new Calculate(input_data,
     document.getElementById("calculateButton"))
 
 calculate.init()
+
+const menuControl = new MenuControl(input_data)
+
+menuControl.init()
 
 calculate.events.on("startCalculation",()=>{
     getInputData.getInput()

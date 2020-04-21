@@ -51,6 +51,10 @@
                   <label for="standbyInput">Standby Duty :</label>
                   <input type="checkbox" class="form-control" id="standbyInput" />
                 </div>
+                <div id="standbystarttimeInputGroup" class="form-group">
+                  <label for="standbystarttimeInput">Standby Start time:</label>
+                  <input type="time" class="form-control" id="standbystarttimeInput" />         
+                </div>
                 <div class="form-group">
                   <label for="fdpstartdateInput">FDP Start date:</label>
                   <input type="date" class="form-control" id="fdpstartDateInput" />         
@@ -83,15 +87,16 @@
                   <label for="splitdutyInput">Splitduty:</label>
                   <input type="checkbox" class="form-control" id="splitdutyInput" />         
                 </div>
-                <div class="form-group">
-                  <label for="splitdutystartInput">Splitduty break start:</label>
-                  <input type="datetime-local" class="form-control" id="splitdutystartInput" value="2018-06-12T19:30" />         
-                </div>
-                <div class="form-group">
-                  <label for="splitdutyendInput">Splitduty break end:</label>
-                  <input type="datetime-local" class="form-control" id="splitdutyendInput" value="2018-06-12T19:30" />         
-                </div>
-                
+                <span id="splitInputGroup">
+                  <div class="form-group">
+                    <label for="splitdutystartInput">Splitduty break start:</label>
+                    <input type="datetime-local" class="form-control" id="splitdutystartInput" value="2018-06-12T19:30" />         
+                  </div>
+                  <div class="form-group">
+                    <label for="splitdutyendInput">Splitduty break end:</label>
+                    <input type="datetime-local" class="form-control" id="splitdutyendInput" value="2018-06-12T19:30" />         
+                  </div>
+                </span>
                 <button id="calculateButton" type="submit" class="btn btn-primary">Calculate</button>
               </form>
             </div>
