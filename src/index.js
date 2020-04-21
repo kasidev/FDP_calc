@@ -7,17 +7,17 @@ const Lookup = require("./controllers/Lookup")
 const dataTimes = require("./data/times.json")
 
 let input_data=  {
-    "regulation" : document.getElementById("regulationInput").value,
-    "tz" : document.getElementById("timezoneInput").value,
-    "stdb" : document.getElementById("standbyInput").checked,
-    "fdpStartDate" : document.getElementById("fdpstartDateInput").value,
-    "fdpStartTime": document.getElementById("fdpstartTimeInput").value,
-    "legs" : document.getElementById("legsInput").value,
-    "dep" : document.getElementById("departureLocationInput").value,
-    "arr" : document.getElementById("arrivalLocationInput").value,
-    "split" : document.getElementById("splitdutyInput").checked,
-    "splitStart" : document.getElementById("splitdutystartInput").value,
-    "splitEnd" : document.getElementById("splitdutyendInput").value,
+    "regulation" : document.getElementById("regulationInput"),
+    "tz" : document.getElementById("timezoneInput"),
+    "stdb" : document.getElementById("standbyInput"),
+    "fdpStartDate" : document.getElementById("fdpstartDateInput"),
+    "fdpStartTime": document.getElementById("fdpstartTimeInput"),
+    "legs" : document.getElementById("legsInput"),
+    "dep" : document.getElementById("departureLocationInput"),
+    "arr" : document.getElementById("arrivalLocationInput"),
+    "split" : document.getElementById("splitdutyInput"),
+    "splitStart" : document.getElementById("splitdutystartInput"),
+    "splitEnd" : document.getElementById("splitdutyendInput"),
 }
 
 const getInputData = new GetInputData(input_data)

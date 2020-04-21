@@ -16,19 +16,20 @@ function GetInputData(input_elements){
 
 GetInputData.prototype.startToLocal = function() {
     return new Promise ((resolve,reject)=>{
-    console.log("input elements: ",this.input_elements)
+    //console.log("input elements: ",this.input_elements)
+    //console.log(document.getElementById("standbyInput").checked)
     let fdpStart
-    if (this.input_elements.tz === "UTC/ZULU") {
-         fdpStart = "".concat(this.input_elements.fdpStartDate, " ",
-         this.input_elements.fdpStartTime) 
+    if (this.input_elements.tz.value === "UTC/ZULU") {
+         fdpStart = "".concat(this.input_elements.fdpStartDate.value, " ",
+         this.input_elements.fdpStartTime.value) 
          fdpStart = moment.tz(fdpStart,"YYYY-MM-DD hh:mm", "Etc/UTC" )
          dataTimes.fdpStartMoment=fdpStart
          //console.log(dataTimes)
     } else {
-        fdpStart = "".concat(this.input_elements.fdpStartDate, " ",
-         this.input_elements.fdpStartTime) 
+        fdpStart = "".concat(this.input_elements.fdpStartDate.value, " ",
+         this.input_elements.fdpStartTime.value) 
          fdpStart = moment.tz(fdpStart,"YYYY-MM-DD hh:mm",
-         this.input_elements.tz )
+         this.input_elements.tz.value )
          dataTimes.fdpStartMoment=fdpStart
          //console.log(dataTimes)   
         

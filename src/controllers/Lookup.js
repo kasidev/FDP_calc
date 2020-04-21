@@ -24,7 +24,7 @@ Lookup.prototype.lookupMax=function(){
     
     let departureTz
     for (const airport of aiportsTz){
-        if (airport.icao === this.input_elements.dep){
+        if (airport.icao === this.input_elements.dep.value){
             departureTz=airport.tz
         }
     }
@@ -37,7 +37,7 @@ Lookup.prototype.lookupMax=function(){
     checkInInt=checkIn.hour()*60
     checkInInt+=checkIn.minute()
     console.log("checkin as int minutes: ",checkInInt)
-    let legs = parseInt(this.input_elements.legs,10)
+    let legs = parseInt(this.input_elements.legs.value,10)
     
 //iterate through easa ftl json to find the maximum flight duty period
 //in minutes

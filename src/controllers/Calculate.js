@@ -34,16 +34,20 @@ Calculate.prototype.eta=function(maxFDP){
     /**@type {moment} */
     const momentEta=dataTimes.fdpStartMoment.add(maxFDP,'minutes')
     console.log("latest ETA [z]: ",momentEta.utc().format())
-    document.getElementById("etaZULU").innerText=momentEta.utc().format()
+    document.getElementById("etaZULU").innerText=momentEta.utc()
+        .format('DDMMM HH:mm z')
 
     //calculate estimated time of arrival in local time of arrival airport
     let arrivalTz
     for (const airport of aiportsTz){
-        if (airport.icao === this.input_elements.arr){
+        if (airport.icao === this.input_elements.arr.value){
             arrivalTz=airport.tz
         }
     }
     console.log("latest ETA [LT]: ",momentEta.tz(arrivalTz).format())
-    document.getElementById("etaLT").innerText=momentEta.tz(arrivalTz).format()
+    document.getElementById("etaLT").innerText=momentEta.tz(arrivalTz)
+        .format('DDMMM HH:mm zz')
+    document.getElementById("etaTz").innerText=arrivalTz
+    document.getElementById("etaHeader").scrollIntoView()
 }
 module.exports = Calculate
