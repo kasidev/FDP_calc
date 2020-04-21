@@ -1,4 +1,4 @@
-{
+[{
   "source" : "https://github.com/jpatokal/openflights",
   "1": {
      "name": "Goroka Airport",
@@ -53312,4 +53312,4 @@
      "icao": "URMS",
      "tz": "Europe/Moscow"
   }
-}
+}]

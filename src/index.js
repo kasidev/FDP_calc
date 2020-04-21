@@ -3,9 +3,10 @@ require("../scss/index.scss")
 
 const GetInputData = require("./controllers/GetInputData")
 const Calculate = require("./controllers/Calculate")
+const Lookup = require("./controllers/Lookup")
 const dataTimes = require("./data/times.json")
 
-const input_data=  {
+let input_data=  {
     "regulation" : document.getElementById("regulationInput").value,
     "tz" : document.getElementById("timezoneInput").value,
     "stdb" : document.getElementById("standbyInput").checked,
@@ -21,10 +22,20 @@ const input_data=  {
 
 const getInputData = new GetInputData(input_data)
 
+const lookup = new Lookup(input_data)
+
 //getInputData.startToLocal()
 
 const calculate = new Calculate(input_data,
     document.getElementById("calculateButton"))
 
 calculate.init()
+
+calculate.events.on("startCalculation",()=>{
+    getInputData.getInput()
+})
+
+getInputData.events.on("inputDataProcessed",()=>{
+    lookup.lookupMax()
+})
 

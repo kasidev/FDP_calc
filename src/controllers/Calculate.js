@@ -22,8 +22,10 @@ function Calculate(input_elements,buttonElement){
 Calculate.prototype.init = function() {
     this.buttonElement.addEventListener("click",(event)=>{
         event.preventDefault()
-        this.events.emit("startCalculation")
+        //event.cancelBubble=true
+        //event.stopPropagation()
         console.log("calculate button clicked")
+        this.events.emit("startCalculation")
     })
 }
 module.exports = Calculate
