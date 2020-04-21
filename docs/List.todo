@@ -59,6 +59,7 @@ FDP_calc 0.1:
 FDP_calc 0.2:
     ☐ get rid of times.json
     save data in html as attribute
+    ☐ fix the lookup for very early starts
 
 
     
