@@ -1,104 +1,107 @@
-{
-    "description":  "Maximum daily Flight duty period for acclimatised crew members",
+[
+    {"description":  "Maximum daily Flight duty period for acclimatised crew members",
     "source": "Easy Access Rules for Air Operations, Regulation EU 965/2012",
-    "regulation" : "EU 83/2014",
-    "0600_1329" :   {
+    "regulation" : "EU 83/2014"},
+    {   "description": "0600_1329",
         "start" :   360,
         "end"   :   809,
-        "fdp_values_2"    :
+        "fdp_list":
+        [   {
+                "max_sectors"    :   2,
+                "max_fdp"   :   780
+            },
+            
             {
-            "max_sectors"    :   2,
-            "max_fdp"   :   780
-        },
-        "fdp_values_3"    :
-        {
-        "max_sectors"    :   3,
-        "max_fdp"   :   750
-        },
-        "fdp_values_4"    :
-        {
-        "max_sectors"    :   4,
-        "max_fdp"   :   720
-        },
-        "fdp_values_5"    :
-        {
-        "max_sectors"    :   5,
-        "max_fdp"   :   690
-        },
-        "fdp_values_6"    :
-        {
-        "max_sectors"    :   6,
-        "max_fdp"   :   660
-        },
-        "fdp_values_7"    :
-        {
-        "max_sectors"    :   7,
-        "max_fdp"   :   630
-        },
-        "fdp_values_8"    :
-        {
-        "max_sectors"    :   8,
-        "max_fdp"   :   600
-        },
-        "fdp_values_9"    :
-        {
-        "max_sectors"    :   9,
-        "max_fdp"   :   570
-        },
-        "fdp_values_10"    :
-        {
-        "max_sectors"    :   10,
-        "max_fdp"   :   540
-        }
+                "max_sectors"    :   3,
+                "max_fdp"   :   750
+            },
+
+            {
+                "max_sectors"    :   4,
+                "max_fdp"   :   720
+            },
+
+            {
+                "max_sectors"    :   5,
+                "max_fdp"   :   690
+            },
+
+            {
+                "max_sectors"    :   6,
+                "max_fdp"   :   660
+            },
+
+            {
+                "max_sectors"    :   7,
+                "max_fdp"   :   630
+            },
+
+            {
+                "max_sectors"    :   8,
+                "max_fdp"   :   600
+            },
+
+            {
+                "max_sectors"    :   9,
+                "max_fdp"   :   570
+            },
+
+            {
+                "max_sectors"    :   10,
+                "max_fdp"   :   540
+            }
+        ]
     },
-    "1330_1359" :   {
+    {   "description":"1330_1359",
         "start" :   810,
         "end"   :   839,
-        "fdp_values_2"    :
+        "fdp_list": [
+
             {
-            "max_sectors"    :   2,
-            "max_fdp"   :   765
-        },
-        "fdp_values_3"    :
-        {
-        "max_sectors"    :   3,
-        "max_fdp"   :   735
-        },
-        "fdp_values_4"    :
-        {
-        "max_sectors"    :   4,
-        "max_fdp"   :   705
-        },
-        "fdp_values_5"    :
-        {
-        "max_sectors"    :   5,
-        "max_fdp"   :   675
-        },
-        "fdp_values_6"    :
-        {
-        "max_sectors"    :   6,
-        "max_fdp"   :   645
-        },
-        "fdp_values_7"    :
-        {
-        "max_sectors"    :   7,
-        "max_fdp"   :   615
-        },
-        "fdp_values_8"    :
-        {
-        "max_sectors"    :   8,
-        "max_fdp"   :   585
-        },
-        "fdp_values_9"    :
-        {
-        "max_sectors"    :   9,
-        "max_fdp"   :   555
-        },
-        "fdp_values_10"    :
-        {
-        "max_sectors"    :   10,
-        "max_fdp"   :   540
-        }
+                "max_sectors"    :   2,
+                "max_fdp"   :   765
+            },
+            
+            {
+                "max_sectors"    :   3,
+                "max_fdp"   :   735
+            },
+            
+            {
+                "max_sectors"    :   4,
+                "max_fdp"   :   705
+            },
+            
+            {
+                "max_sectors"    :   5,
+                "max_fdp"   :   675
+            },
+            
+            {
+                "max_sectors"    :   6,
+                "max_fdp"   :   645
+            },
+            
+            {
+                "max_sectors"    :   7,
+                "max_fdp"   :   615
+            },
+            
+            {
+                "max_sectors"    :   8,
+                "max_fdp"   :   585
+            },
+            
+            {
+                "max_sectors"    :   9,
+                "max_fdp"   :   555
+            },
+            
+            {
+                "max_sectors"    :   10,
+                "max_fdp"   :   540
+            }
+        ]
     }
 
-}
+]

@@ -6,6 +6,7 @@ const EventEmitter = require("eventemitter3")
 const dataTimes = require("../data/times.json")
 const {on} = require("../utils/dom")
 const aiportsTz=require("../data/airportsTz.json")
+const easaFTL = require("../data/easaFTL_83_2014.json")
 
 
 /**
@@ -36,5 +37,24 @@ Lookup.prototype.lookupMax=function(){
     checkInInt=checkIn.hour()*60
     checkInInt+=checkIn.minute()
     console.log("checkin as int minutes: ",checkInInt)
+    let legs = parseInt(this.input_elements.legs,10)
+    
+//iterate through easa ftl json to find the maximum flight duty period
+//in minutes
+    for (const section of easaFTL) {
+        if (section.start){
+            if (checkInInt>=section.start && checkInInt <=section.end) {
+               console.log("section found: ",section)
+               for (const values of section.fdp_list) {
+                   if (legs===values.max_sectors) {
+                       console.log("max fdp [min]: ",values.max_fdp)
+                       let maxFDP = values.max_fdp
+                       this.events.emit("lookupCompleted",maxFDP)                 
+                   }                   
+               }
+            }
+        }      
+    }
 }
+
 module.exports = Lookup

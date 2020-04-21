@@ -39,3 +39,7 @@ getInputData.events.on("inputDataProcessed",()=>{
     lookup.lookupMax()
 })
 
+lookup.events.on("lookupCompleted",(maxFDP)=>{
+    calculate.eta(maxFDP)
+})
+

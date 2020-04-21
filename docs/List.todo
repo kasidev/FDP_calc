@@ -44,17 +44,19 @@ FDP_calc 0.1:
                 moment('2016-01-01T00:00:00+02:00').format()
 
             ✔ Calculate Start of FDP in Local time @done(20-04-21 11:15)
-            ☐ Get start hour and start minute
+            ✔ Get start hour and start minute @done(20-04-21 15:12)
             achived with momentjs
             lookup control:
-                ☐ lookup max FDP in easa_04_2020_fdp_max.json
+                ✔ lookup max FDP in easa_04_2020_fdp_max.json @done(20-04-21 15:13)
                 ☐ calculate eta in localtime
 
             convert control:
                 ☐ convert eta to utc and requested timezone
 
+
         ☐ Write output to DOM
 
+        
     
 
 
