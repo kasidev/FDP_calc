@@ -44,6 +44,9 @@ MenuControl.prototype.apLookup=function(term){
 
         }
     })
+    if(term.length === 0) {
+        matches=[]
+    }
     console.log("matches",matches)
 
 }
