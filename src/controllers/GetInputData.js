@@ -47,10 +47,17 @@ GetInputData.prototype.startToLocal = function() {
 }
 
 GetInputData.prototype.getInput = function(){
+    /*const specials ={
+        "splitCheck"    : this.input_elements.split.checked,
+        "splitStart"  : this.input_elements.splitStart.value,
+        "splitEnd"  : this.input_elements.splitEnd.value,
+        "stdbStart" : this.input_elements.stdbStart.value,
+        "stdbCheck" : this.input_elements.stdb.checked
+    }*/
     this.startToLocal()
         .then((value)=>{
             console.log(value)
-            this.events.emit(value)
+            this.events.emit(value/*specials*/)
         })
 }
 
