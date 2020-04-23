@@ -9,7 +9,7 @@
     "start:dev": "npm-run-all -p -r start:dev-webpack start:dev-backend",
     "start:dev-backend": "nodemon server/app.js",
     "start:dev-webpack": "webpack-dev-server",
-    "build": "webpack --mode production",
+    "build": "webpack --ode production",
     "prod-server": "npm run build && node server/app.js"
   },
   "author": "Patrick Kasiala",
