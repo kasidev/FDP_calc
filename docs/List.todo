@@ -2,9 +2,9 @@ FDP_calc 0.1:
     Setup:
         ✔ Git Setup Desktop @done(20-04-15 13:27)
         ✔ Git Setup Laptop @done(20-04-15 13:27)
-        ☐ Git Setup Server
+        ✔ Git Setup Server @done(20-04-23 21:18)
         ✔ Get and install starter webpack @done(20-04-18 12:32)
-        ☐ Get and install starter server
+        ✔ Get and install starter server @done(20-04-23 21:18)
         ✔ Get jest @done(20-04-18 12:32)
         ✔ Get babbel @done(20-04-21 16:24)
         ✔ Get Moment.js @done(20-04-21 16:24)
@@ -35,7 +35,7 @@ FDP_calc 0.1:
         ✔ Eventlistener on Start calculation button @done(20-04-21 16:24)
         ✔ Get user values @done(20-04-21 16:24)
         Write lookup function:
-            ☐ Write easa_04_2020_fdp_max.json
+            ✔ Write easa_04_2020_fdp_max.json @done(20-04-23 21:18)
 
             getuserinput control:
                 ✔ Get input timezone @done(20-04-20 18:12)
@@ -59,8 +59,23 @@ FDP_calc 0.1:
 FDP_calc 0.2:
     ☐ get rid of times.json
     save data in html as attribute
-    ☐ fix the lookup for very early starts
+    ✔ fix the lookup for very early 
+    
+    ☐ include standby duty deduction
 
+    ☐ include split duty deduction
+
+    ☐ get all timezones in the input timezone field
+
+    ☐ get some nice styles and nice fonts
+
+FDP_calc 0.3:
+    ☐ implement a simple graphical display of the results
+    use a gant chart
+    ☐ improve css and html
+
+FDP_calc 0.4:
+    ☐ try to deploy on AWS
 
     
 
