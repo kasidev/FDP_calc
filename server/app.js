@@ -7,16 +7,26 @@ const fs = require("fs")
 const mimeTypes = require("mime-types")
 const servPublic = require("./public")
 const serverLog = require("../src/data/serverLog.json")
+const requestIp=require("request-ip")
 
 //const sanitizePath = path.normalize(parsedUrl.pathname).replace(/^(\.\.[\/\\])+/, '')
 
-
-let counter = 77
+let counter = 93
 const app = http.createServer((req, res) => {
+
   counter+=1
-  serverLog.req=counter
-  serverLog.push(req)
-  console.log(counter)
+  //console.log(req.headers.host)
+  //console.log(counter)
+  //console.log(requestIp.getClientIp(req))
+  const reqLog={
+    "id": counter,
+    "req": req,
+    "ip": requestIp.getClientIp(req)
+  }
+  serverLog.push(reqLog)
+  console.log(serverLog)
+  fs.writeFile('../src/data/serverLog`＄{}`.json"',serverLog)
+
   const parsedUrl = url.parse(req.url)
   console.log(parsedUrl.pathname)
   if(parsedUrl.pathname.substr(0,8)==="/public/"){
