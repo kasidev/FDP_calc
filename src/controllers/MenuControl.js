@@ -24,8 +24,8 @@ function MenuControl(input_elements,depTable,arrTable){
 }
 
 MenuControl.prototype.init=function(){
-    document.getElementById("standbystarttimeInputGroup").style.display='none'
-    document.getElementById("splitInputGroup").style.display='none'
+    document.getElementById("standbystarttimeInputGroup").classList.toggle("d-none")
+    document.getElementById("splitInputGroup").classList.toggle("d-none")
     //document.getElementById("arrivalLocationInput").addEventListener()
     on(".input-arrAirport", "keyup", (event) => {
         /**@type {string} */
@@ -37,6 +37,15 @@ MenuControl.prototype.init=function(){
         const term = event.handleObj.value
         this.apLookup(term,this.depTable)
       })
+    
+    on(".standbyInputCheck", "click", (event) => {
+        document.getElementById("standbystarttimeInputGroup").classList.toggle("d-none")
+    }) 
+
+      on(".splitdutyCheck", "click", (event) => {
+        document.getElementById("splitInputGroup").classList.toggle("d-none")
+      }) 
+
     on(".airportAutocompleteRows","click",(event)=>{
         const selectedIcao = event.handleObj.dataset.icao
         if(event.handleObj.dataset.table==="arrTable"){

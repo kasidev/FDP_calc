@@ -6,11 +6,14 @@ const Calculate = require("./controllers/Calculate")
 const Lookup = require("./controllers/Lookup")
 const MenuControl = require("./controllers/MenuControl")
 const dataTimes = require("./data/times.json")
+const Standby = require("./controllers/Standby")
+const Split = require("./controllers/Split")
 
 let input_data=  {
     "regulation" : document.getElementById("regulationInput"),
     "tz" : document.getElementById("timezoneInput"),
     "stdb" : document.getElementById("standbyInput"),
+    "stdbStart" : document.getElementById("standbystarttimeInput"),
     "fdpStartDate" : document.getElementById("fdpstartDateInput"),
     "fdpStartTime": document.getElementById("fdpstartTimeInput"),
     "legs" : document.getElementById("legsInput"),
@@ -19,6 +22,7 @@ let input_data=  {
     "split" : document.getElementById("splitdutyInput"),
     "splitStart" : document.getElementById("splitdutystartInput"),
     "splitEnd" : document.getElementById("splitdutyendInput"),
+    "splitD1"   : document.getElementById("splitdutyOvernight")
 }
 
 const getInputData = new GetInputData(input_data)
@@ -39,12 +43,19 @@ const menuControl = new MenuControl(
 
 menuControl.init()
 
+const standby = new Standby()
+
+const split = new Split()
+
 calculate.events.on("startCalculation",()=>{
     getInputData.getInput()
+    
 })
 
-getInputData.events.on("inputDataProcessed",()=>{
+getInputData.events.on("inputDataProcessed",(/*specials*/)=>{
     lookup.lookupMax()
+    //split.calculate(specials)
+    //standby.calculate(splitStart,splitEnd)
 })
 
 lookup.events.on("lookupCompleted",(maxFDP)=>{
