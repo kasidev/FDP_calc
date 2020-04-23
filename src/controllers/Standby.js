@@ -19,7 +19,7 @@ function Standby(standbyStart){
 
 Standby.prototype.calculate = function(specials){
     if(specials.stdbCheck&&specials.stdbStart){
-        console.log("standby start:",standbyStart)
+        console.log("standby start:",specials.standbyStart)
         alert("the calculation of standby duty is not implemented yet")
     }
     
