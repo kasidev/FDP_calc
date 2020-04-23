@@ -11,10 +11,11 @@ const serverLog = require("../src/data/serverLog.json")
 //const sanitizePath = path.normalize(parsedUrl.pathname).replace(/^(\.\.[\/\\])+/, '')
 
 
-let counter = 0
+let counter = 77
 const app = http.createServer((req, res) => {
   counter+=1
   serverLog.req=counter
+  serverLog.push(req)
   console.log(counter)
   const parsedUrl = url.parse(req.url)
   console.log(parsedUrl.pathname)
