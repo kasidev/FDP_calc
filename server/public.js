@@ -1,38 +1,48 @@
 "use strict"
 
+const http = require("http")
+const url = require("url")
 const path = require("path")
-const mimeTypes = require("mime-types")
 const fs = require("fs")
+const mimeTypes = require("mime-types")
 
 module.exports = function(parsedUrl, res) {
-  const sanitizePath = path.normalize(parsedUrl.pathname.substr(7)).replace(/^(\.\.[\/\\])+/, '')
-      
-  const absolutePath = path.join(__dirname, "..", "public", sanitizePath)
-  console.log("absolutePath:", absolutePath)
+    const sanitizePath = path.normalize(parsedUrl.pathname.substr(7)).replace(/^(\.\.[\/\\])+/, '')
+    const absPath = path.join(__dirname, "../", "public",sanitizePath)
+    console.log("abs path:",absPath)
 
-  fs.exists(absolutePath, (exists) => {
-    if (!exists) {
-      res.writeHead(404, {
-        "Content-Type": "text/plain"
-      })
-      res.write("404 not found")
-      res.end()
-      return
-    } 
-    fs.readFile(absolutePath, (err, content) => {
-      if (err) {
-        res.writeHead(500, {
-          "Content-Type": "text/plain"
+    fs.exists(absPath,(exists)=>{
+      if(!exists){
+        // file does not exist
+        res.writeHead(404, {
+          "Content-Type": "text/html"
         })
-        res.write("500 Internal Server Error")
+    
+          res.write("<strong>404 not found</strong>")
+          res.end()
+          return
+  
+      }
+      // read in file
+      fs.readFile(absPath,(err,content) => {
+        if(err){
+          res.writeHead(500, {
+            "Content-Type": "text/html"
+          })
+      
+            res.write("<strong>404 not found</strong>")
+            res.end()
+            return
+    
+        }
+        res.writeHead(200, {
+          "Content-Type": mimeTypes.lookup(sanitizePath)
+        })
+        res.write(content)
         res.end()
         return
-      } 
-      res.writeHead(200, {
-        "Content-Type": mimeTypes.lookup(sanitizePath)
       })
-      res.write(content)
-      res.end()
     })
-  })
+    
+    return
 }

@@ -20,7 +20,8 @@
     "bootswatch": "^4.3.1",
     "eventemitter3": "^3.1.2",
     "html-minifier": "^4.0.0",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "mime-types": "^2.1.26"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
