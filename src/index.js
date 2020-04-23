@@ -32,7 +32,10 @@ const calculate = new Calculate(input_data,
 
 calculate.init()
 
-const menuControl = new MenuControl(input_data)
+const menuControl = new MenuControl(
+    input_data,
+    document.getElementById("depTable"),
+    document.getElementById("arrTable"))
 
 menuControl.init()
 
