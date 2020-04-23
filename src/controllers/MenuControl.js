@@ -39,11 +39,20 @@ MenuControl.prototype.init=function(){
       })
     
     on(".standbyInputCheck", "click", (event) => {
-        document.getElementById("standbystarttimeInputGroup").classList.toggle("d-none")
+        if(event.handleObj.checked){
+            document.getElementById("standbystarttimeInputGroup").classList.remove("d-none")}
+        else{
+            document.getElementById("standbystarttimeInputGroup").classList.add("d-none")
+        }
+
     }) 
 
       on(".splitdutyCheck", "click", (event) => {
-        document.getElementById("splitInputGroup").classList.toggle("d-none")
+        if(event.handleObj.checked){
+            document.getElementById("splitInputGroup").classList.remove("d-none")}
+        else{
+            document.getElementById("splitInputGroup").classList.add("d-none")
+        }
       }) 
 
     on(".airportAutocompleteRows","click",(event)=>{

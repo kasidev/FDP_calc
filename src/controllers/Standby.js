@@ -17,8 +17,12 @@ function Standby(standbyStart){
         this.events = new EventEmitter()
 }
 
-Standby.prototype.calculate = function(standbyStart){
-    console.log("standby start:",standbyStart)
+Standby.prototype.calculate = function(specials){
+    if(specials.stdbCheck&&specials.stdbStart){
+        console.log("standby start:",standbyStart)
+        alert("the calculation of standby duty is not implemented yet")
+    }
+    
 }
 
 module.exports = Standby

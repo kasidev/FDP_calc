@@ -52,10 +52,10 @@ calculate.events.on("startCalculation",()=>{
     
 })
 
-getInputData.events.on("inputDataProcessed",(/*specials*/)=>{
+getInputData.events.on("inputDataProcessed",(specials)=>{
     lookup.lookupMax()
-    //split.calculate(specials)
-    //standby.calculate(splitStart,splitEnd)
+    split.calculate(specials)
+    standby.calculate(specials)
 })
 
 lookup.events.on("lookupCompleted",(maxFDP)=>{
