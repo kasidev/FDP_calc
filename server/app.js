@@ -10,8 +10,10 @@ const servPublic = require("./public")
 //const sanitizePath = path.normalize(parsedUrl.pathname).replace(/^(\.\.[\/\\])+/, '')
 
 
-
+let counter = 0
 const app = http.createServer((req, res) => {
+  counter+=1
+  console.log(counter)
   const parsedUrl = url.parse(req.url)
   console.log(parsedUrl.pathname)
   if(parsedUrl.pathname.substr(0,8)==="/public/"){

@@ -9,7 +9,7 @@ const mimeTypes = require("mime-types")
 module.exports = function(parsedUrl, res) {
     const sanitizePath = path.normalize(parsedUrl.pathname.substr(7)).replace(/^(\.\.[\/\\])+/, '')
     const absPath = path.join(__dirname, "../", "public",sanitizePath)
-    console.log("abs path:",absPath)
+    //console.log("abs path:",absPath)
 
     fs.exists(absPath,(exists)=>{
       if(!exists){
