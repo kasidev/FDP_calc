@@ -66,6 +66,8 @@ FDP_calc 0.2:
     ✔ include split duty deduction @done(20-04-25 10:55)
 
     ☐ get all timezones in the input timezone field
+    moment.tz.names()
+    
 
     ☐ Check inputs for consitency
     e.g. split duty start before fdp start
