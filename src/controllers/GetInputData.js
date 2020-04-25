@@ -35,7 +35,9 @@ GetInputData.prototype.startToLocal = function() {
         
     }
     if (dataTimes.fdpStartMoment.isValid()) {
-        resolve("inputDataProcessed")
+        resolve({
+            "emitString"    :   "inputDataProcessed",
+            "fdpStart"      :   fdpStart})
         console.log("input fdp : ", dataTimes.fdpStartMoment.utc().format())
         
     } else {
@@ -84,8 +86,8 @@ GetInputData.prototype.getInput = function(){
     }
     this.startToLocal()
         .then((value)=>{
-            console.log(value)
-            this.events.emit(value,exceptionValues)
+            //console.log(value)
+            this.events.emit(value.emitString,value.fdpStart,exceptionValues)
         })
 }
 

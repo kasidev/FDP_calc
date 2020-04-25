@@ -20,7 +20,7 @@ function Lookup(input_elements,buttonElement){
 
 }
 
-Lookup.prototype.lookupMax=function(){
+Lookup.prototype.lookupMax=function(fdpStart){
     
     let departureTz
     for (const airport of aiportsTz){
@@ -30,7 +30,7 @@ Lookup.prototype.lookupMax=function(){
     }
     console.log("departure tz: ",departureTz)
     /**@type {moment}  */
-    let checkIn=dataTimes.fdpStartMoment.tz(departureTz)
+    let checkIn=fdpStart.tz(departureTz)
     console.log("Check In Time [LT] :",checkIn.format())
 
     let checkInInt

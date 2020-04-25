@@ -57,15 +57,18 @@ FDP_calc 0.1:
         ✔ Write output to DOM @done(20-04-21 16:24)
 
 FDP_calc 0.2:
-    ☐ get rid of times.json
+    ✔ get rid of times.json @done(20-04-25 10:56)
     save data in html as attribute
     ✔ fix the lookup for very early 
     
-    ☐ include standby duty deduction
+    ✔ include standby duty deduction @done(20-04-25 11:30)
 
-    ☐ include split duty deduction
+    ✔ include split duty deduction @done(20-04-25 10:55)
 
     ☐ get all timezones in the input timezone field
+
+    ☐ Check inputs for consitency
+    e.g. split duty start before fdp start
 
     ☐ get some nice styles and nice fonts
 
@@ -73,6 +76,7 @@ FDP_calc 0.3:
     ☐ implement a simple graphical display of the results
     use a gant chart
     ☐ improve css and html
+
 
 FDP_calc 0.4:
     ☐ try to deploy on AWS

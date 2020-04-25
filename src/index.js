@@ -54,15 +54,16 @@ calculate.events.on("startCalculation",()=>{
     
 })
 let splitIncrease = 0
-//let standbyDeduction
-getInputData.events.on("inputDataProcessed",(exceptionValues)=>{
+let standbyDeduction = 0
+getInputData.events.on("inputDataProcessed",(fdpStart,exceptionValues)=>{
+    console.log("exeptionvalues: ",exceptionValues)
     splitIncrease=split.calculate(exceptionValues)
-    standby.calculate(exceptionValues,)
-    lookup.lookupMax()
+    standbyDeduction=standby.calculate(fdpStart,exceptionValues)
+    lookup.lookupMax(fdpStart)
 })
 
 
 lookup.events.on("lookupCompleted",(maxFDP)=>{
-    calculate.eta(maxFDP,splitIncrease)
+    calculate.eta(maxFDP,splitIncrease,standbyDeduction)
 })
 

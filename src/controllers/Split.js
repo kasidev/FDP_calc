@@ -24,6 +24,8 @@ Split.prototype.calculate = function(exceptionValues){
 
         if(duration>=180){
             return duration
+        }else if(duration<0){
+            alert("Check split duty start/end input")
         }
     }
     duration =0
