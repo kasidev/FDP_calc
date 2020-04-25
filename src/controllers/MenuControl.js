@@ -49,7 +49,10 @@ MenuControl.prototype.init=function(){
 
       on(".splitdutyCheck", "click", (event) => {
         if(event.handleObj.checked){
-            document.getElementById("splitInputGroup").classList.remove("d-none")}
+            document.getElementById("splitInputGroup").classList.remove("d-none")
+            this.input_elements.splitStartD.value=this.input_elements.fdpStartDate.value
+            this.input_elements.splitEndD.value=this.input_elements.fdpStartDate.value
+        }
         else{
             document.getElementById("splitInputGroup").classList.add("d-none")
         }

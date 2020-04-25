@@ -20,8 +20,10 @@ let input_data=  {
     "dep" : document.getElementById("departureLocationInput"),
     "arr" : document.getElementById("arrivalLocationInput"),
     "split" : document.getElementById("splitdutyInput"),
-    "splitStart" : document.getElementById("splitdutystartInput"),
-    "splitEnd" : document.getElementById("splitdutyendInput"),
+    "splitStartT" : document.getElementById("splitdutystartInputTime"),
+    "splitStartD" : document.getElementById("splitdutystartInputDate"),
+    "splitEndT" : document.getElementById("splitdutyendInputTime"),
+    "splitEndD" : document.getElementById("splitdutyendInputDate"),
     "splitD1"   : document.getElementById("splitdutyOvernight")
 }
 
@@ -51,14 +53,16 @@ calculate.events.on("startCalculation",()=>{
     getInputData.getInput()
     
 })
-
-getInputData.events.on("inputDataProcessed",(specials)=>{
+let splitIncrease = 0
+//let standbyDeduction
+getInputData.events.on("inputDataProcessed",(exceptionValues)=>{
+    splitIncrease=split.calculate(exceptionValues)
+    standby.calculate(exceptionValues)
     lookup.lookupMax()
-    split.calculate(specials)
-    standby.calculate(specials)
 })
 
+
 lookup.events.on("lookupCompleted",(maxFDP)=>{
-    calculate.eta(maxFDP)
+    calculate.eta(maxFDP,splitIncrease)
 })
 

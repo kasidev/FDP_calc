@@ -8,20 +8,26 @@ const {on} = require("../utils/dom")
 const aiportsTz=require("../data/airportsTz.json")
 
 
-/**
- * @param {moment} splitStart
- * @param {moment} splitEnd
- */
+
 
 function Split(){
         this.events = new EventEmitter()
 }
 
-Split.prototype.calculate = function(specials){
-    if(specials.splitCheck){
-        console.log("calculate Split duty")
-        alert("the calculation of split duty is not implemented yet")
+Split.prototype.calculate = function(exceptionValues){
+    let duration
+    if(exceptionValues.splitStart){
+        console.log("calculate Split duty: ",exceptionValues)
+        duration = 
+        exceptionValues.splitEnd.diff(exceptionValues.splitStart, 'minutes')
+        
+
+        if(duration>=180){
+            return duration
+        }
     }
+    duration =0
+    return duration
 }
 
 module.exports = Split

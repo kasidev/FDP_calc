@@ -46,18 +46,46 @@ GetInputData.prototype.startToLocal = function() {
 })
 }
 
+
+GetInputData.prototype.getMoment = function(time,date,tz){
+    let momentValue
+    if (tz === "UTC/ZULU") {
+        momentValue= "".concat(date, " ",time) 
+        momentValue = moment.tz(momentValue,"YYYY-MM-DD hh:mm", "Etc/UTC" )
+
+    } else {
+        momentValue = "".concat(date, " ",time) 
+        momentValue = moment.tz(momentValue,"YYYY-MM-DD hh:mm",tz )       
+    }
+    return momentValue
+}
+
 GetInputData.prototype.getInput = function(){
-    const specials ={
-        "splitCheck"    : this.input_elements.split.checked,
-        "splitStart"  : this.input_elements.splitStart.value,
-        "splitEnd"  : this.input_elements.splitEnd.value,
-        "stdbStart" : this.input_elements.stdbStart.value,
-        "stdbCheck" : this.input_elements.stdb.checked
+    const exceptionValues ={}
+    if(this.input_elements.stdb.checked){
+        const stdbStart = this.getMoment(
+            this.input_elements.stdbStart.value,
+            this.input_elements.fdpStartDate.value,
+            this.input_elements.tz.value)
+        exceptionValues.stdbStart=stdbStart
+    }
+
+    if(this.input_elements.split.checked){
+        const splitStart = this.getMoment(
+            this.input_elements.splitStartT.value,
+            this.input_elements.splitStartD.value,
+            this.input_elements.tz.value)
+        const splitEnd = this.getMoment(
+            this.input_elements.splitEndT.value,
+            this.input_elements.splitEndD.value,
+            this.input_elements.tz.value)
+        exceptionValues.splitStart=splitStart
+        exceptionValues.splitEnd=splitEnd
     }
     this.startToLocal()
         .then((value)=>{
             console.log(value)
-            this.events.emit(value,specials)
+            this.events.emit(value,exceptionValues)
         })
 }
 

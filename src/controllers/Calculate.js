@@ -30,9 +30,11 @@ Calculate.prototype.init = function() {
     })
 }
 
-Calculate.prototype.eta=function(maxFDP){
+Calculate.prototype.eta=function(maxFDP,splitIncrease){
+    console.log("split minutes: ",splitIncrease)
     /**@type {moment} */
     const momentEta=dataTimes.fdpStartMoment.add(maxFDP,'minutes')
+    momentEta.add(splitIncrease/2,"minutes")
     console.log("latest ETA [z]: ",momentEta.utc().format())
     document.getElementById("etaZULU").innerText=momentEta.utc()
         .format('DDMMM HH:mm z')
