@@ -17,10 +17,12 @@ function Standby(standbyStart){
         this.events = new EventEmitter()
 }
 
-Standby.prototype.calculate = function(specials){
-    if(specials.stdbCheck&&specials.stdbStart){
+Standby.prototype.calculate = function(exceptionValues){
+    if(exceptionValues.stdbStart){
         console.log("standby start:",specials.standbyStart)
-        alert("the calculation of standby duty is not implemented yet")
+        const checkIn=dataTimes.fdpStartMoment
+        
+
     }
     
 }

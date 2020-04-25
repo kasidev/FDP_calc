@@ -57,7 +57,7 @@ let splitIncrease = 0
 //let standbyDeduction
 getInputData.events.on("inputDataProcessed",(exceptionValues)=>{
     splitIncrease=split.calculate(exceptionValues)
-    standby.calculate(exceptionValues)
+    standby.calculate(exceptionValues,)
     lookup.lookupMax()
 })
 

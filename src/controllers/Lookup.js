@@ -30,7 +30,7 @@ Lookup.prototype.lookupMax=function(){
     }
     console.log("departure tz: ",departureTz)
     /**@type {moment}  */
-    let checkIn=dataTimes.fdpStartMoment.tz("Europe/Zurich")
+    let checkIn=dataTimes.fdpStartMoment.tz(departureTz)
     console.log("Check In Time [LT] :",checkIn.format())
 
     let checkInInt
