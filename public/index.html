@@ -44,10 +44,16 @@
                 </div>
                 <div class="form-group">
                   <label for="timezoneInput">Input Time Zone:</label>
-                  <select class="form-control" id="timezoneInput">
+                  <!--<select class="form-control" id="timezoneInput">
                     <option>UTC/ZULU</option>
                     <option>Europe/Zurich</option>
-                  </select>
+                  </select>-->
+                  <input type="text" value="UTC/ZULU" class="form-control input-tz" id="timezoneInput" />
+                  <table class="table mb-0">
+                    <tbody id="tzTable">
+
+                    </tbody>
+                  </table>
                 </div>
                 <div class="form-group">
                   <label for="standbyInput">Standby Duty :</label>

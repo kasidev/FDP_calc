@@ -6,7 +6,9 @@ const EventEmitter = require("eventemitter3")
 const {on} = require("../utils/dom")
 const aiportsTz=require("../data/airportsTz.json")
 const airportTemplate=require("../templates/airportAutocomplete.ejs")
-const airportListTemplate=require("../templates/airportList.ejs")
+const timezoneTemplate=require("../templates/timeZoneAutocomplete.ejs")
+/*const airportListTemplate=require("../templates/airportList.ejs")*/
+const timeZonesData = require("../data/timeZones.json")
 
 
 /**
@@ -15,10 +17,11 @@ const airportListTemplate=require("../templates/airportList.ejs")
  * @param {HTMLTableElement} depTable
  */
 
-function MenuControl(input_elements,depTable,arrTable){
+function MenuControl(input_elements,depTable,arrTable,tzTable){
         this.input_elements = input_elements
         this.arrTable = arrTable
         this.depTable = depTable
+        this.tzTable = tzTable
         this.events = new EventEmitter()
 
 }
@@ -32,10 +35,19 @@ MenuControl.prototype.init=function(){
         const term = event.handleObj.value
         this.apLookup(term,this.arrTable)
       })
+    
+
     on(".input-depAirport", "keyup", (event) => {
         /**@type {string} */
         const term = event.handleObj.value
         this.apLookup(term,this.depTable)
+      })
+
+    on(".input-tz", "keyup", (event) => {
+        /**@type {string} */
+        const term = "/" + event.handleObj.value
+        this.tzLookup(term,this.tzTable)
+        console.log("term: ", term)
       })
     
     on(".standbyInputCheck", "click", (event) => {
@@ -107,6 +119,45 @@ MenuControl.prototype.apLookup=function(term,apTable){
                 tableName: apTable.id
             })
             apTable.insertAdjacentHTML("beforeend",airportHtml)
+        }
+        
+
+    }
+
+}
+
+MenuControl.prototype.tzLookup=function(term,tzTable){
+    //console.log(term)
+
+    let tzmatches =[]
+
+    for(let i = tzTable.rows.length - 1; i >= 0; i--)
+        {
+            tzTable.deleteRow(i);
+        }
+
+    if(term.length === 0 || term.length<4) {
+        tzmatches=[]
+        return
+    }
+    
+    tzmatches = timeZonesData.filter((timezone)=>{
+        const regex = new RegExp(`${term}`,`gi`)
+        if (timezone.name){
+            /*console.log(timezone.name)*/
+            return timezone.name.match(regex)
+        }
+    })
+
+    
+    if(tzmatches.length>0){
+        console.log(tzmatches)
+        for (const timezone of tzmatches) {
+            const timezoneHtml=timezoneTemplate({
+                tzName: timezone.name,
+                tableName: tzTable.id
+            })
+            tzTable.insertAdjacentHTML("beforeend",timezoneHtml)
         }
         
 

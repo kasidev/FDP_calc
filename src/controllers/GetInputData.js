@@ -4,6 +4,7 @@ const moment = require("moment")
 const momentTZ = require('moment-timezone')
 const EventEmitter = require("eventemitter3")
 const dataTimes = require("../data/times.json")
+const timeZoneFile = require("../data/timeZones.json")
 
 
 /**
@@ -12,6 +13,10 @@ const dataTimes = require("../data/times.json")
 function GetInputData(input_elements){
         this.input_elements = input_elements
         this.events = new EventEmitter()
+}
+
+GetInputData.prototype.init = function(){
+
 }
 
 GetInputData.prototype.startToLocal = function() {

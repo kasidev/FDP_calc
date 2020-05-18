@@ -31,6 +31,7 @@ const getInputData = new GetInputData(input_data)
 
 const lookup = new Lookup(input_data)
 
+
 //getInputData.startToLocal()
 
 const calculate = new Calculate(input_data,
@@ -41,7 +42,8 @@ calculate.init()
 const menuControl = new MenuControl(
     input_data,
     document.getElementById("depTable"),
-    document.getElementById("arrTable"))
+    document.getElementById("arrTable"),
+    document.getElementById("tzTable"))
 
 menuControl.init()
 
