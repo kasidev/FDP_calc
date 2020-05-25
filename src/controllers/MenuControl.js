@@ -45,7 +45,7 @@ MenuControl.prototype.init=function(){
 
     on(".input-tz", "keyup", (event) => {
         /**@type {string} */
-        const term = "/" + event.handleObj.value
+        const term = event.handleObj.value
         this.tzLookup(term,this.tzTable)
         console.log("term: ", term)
       })
@@ -86,6 +86,18 @@ MenuControl.prototype.init=function(){
             }
         }
     })
+
+    on(".TimezoneAutocompleteRows","click",(event)=>{
+        const timeZoneName = event.handleObj.dataset.tzname
+        this.input_elements.tz.value=timeZoneName
+
+        for(let i = this.tzTable.rows.length - 1; i >= 0; i--)
+            {
+                this.tzTable.deleteRow(i);
+            }
+
+
+    })
     
 
 }
@@ -103,7 +115,7 @@ MenuControl.prototype.apLookup=function(term,apTable){
         return
     }
     let matches = aiportsTz.filter((airport)=>{
-        const regex = new RegExp(`^${term}`,`gi`)
+        const regex = new RegExp(`${term}`,`gi`)
         if (airport.iata){
             //console.log(airport.iata)
             return airport.iata.match(regex) || airport.icao.match(regex)
@@ -136,7 +148,7 @@ MenuControl.prototype.tzLookup=function(term,tzTable){
             tzTable.deleteRow(i);
         }
 
-    if(term.length === 0 || term.length<4) {
+    if(term.length === 0 || term.length<3) {
         tzmatches=[]
         return
     }
@@ -151,10 +163,11 @@ MenuControl.prototype.tzLookup=function(term,tzTable){
 
     
     if(tzmatches.length>0){
-        console.log(tzmatches)
+        console.log("matches", tzmatches)
         for (const timezone of tzmatches) {
             const timezoneHtml=timezoneTemplate({
                 tzName: timezone.name,
+                tzAbbr: timezone.abbrs[0],
                 tableName: tzTable.id
             })
             tzTable.insertAdjacentHTML("beforeend",timezoneHtml)

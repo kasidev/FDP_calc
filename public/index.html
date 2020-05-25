@@ -48,7 +48,7 @@
                     <option>UTC/ZULU</option>
                     <option>Europe/Zurich</option>
                   </select>-->
-                  <input type="text" value="UTC/ZULU" class="form-control input-tz" id="timezoneInput" />
+                  <input type="text" value="Zulu" class="form-control input-tz" id="timezoneInput" placeholder="type 3 charachters to search" />
                   <table class="table mb-0">
                     <tbody id="tzTable">
 
@@ -130,7 +130,7 @@
                   <th style="width: 15rem">Date</th>
                 </tr>
               </thead>
-              <tbody id="productList">
+              <tbody id="EtaList">
                 <tr>
                   <td>UTC/ZULU</td>
                   <td id="etaZULU"> 05.08.2020 15:00</td>
@@ -139,6 +139,37 @@
                 <tr>
                   <td id="etaTz">Europe/Zurich</td>
                   <td id="etaLT">05.08.2020 17:00</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <div id="ResultHeader" class="card-header">
+              Results
+            </div>
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th>Value</th>
+                  <th style="width: 15rem">Result</th>
+                </tr>
+              </thead>
+              <tbody id="EtaList">
+                <tr>
+                  <td>Maximum Flight duty Period</td>
+                  <td id="maxFdp"> 12 hours 30 minutes</td>
+                </tr>
+
+                <tr>
+                  <td >Standby deduction</td>
+                  <td id="stdbyDeduction">0 minutes</td>
+                </tr>
+
+                <tr>
+                  <td >Split duty increase</td>
+                  <td id="splitIncrease">0 minutes</td>
                 </tr>
 
               </tbody>

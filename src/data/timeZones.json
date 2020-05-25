@@ -1,5 +1,4 @@
  [
-     {"name":"UTC/ZULU"},
       {
         "name": "Africa/Abidjan",
         "abbrs": [
@@ -82149,20 +82148,6 @@
         "countries": []
       },
       {
-        "name": "Etc/UTC",
-        "abbrs": [
-          "UTC"
-        ],
-        "untils": [
-          null
-        ],
-        "offsets": [
-          0
-        ],
-        "population": 0,
-        "countries": []
-      },
-      {
         "name": "Etc/Zulu",
         "abbrs": [
           "UTC"
@@ -121209,20 +121194,6 @@
         "countries": []
       },
       {
-        "name": "UCT",
-        "abbrs": [
-          "UTC"
-        ],
-        "untils": [
-          null
-        ],
-        "offsets": [
-          0
-        ],
-        "population": 0,
-        "countries": []
-      },
-      {
         "name": "Universal",
         "abbrs": [
           "UTC"
@@ -126490,20 +126461,6 @@
         "offsets": [
           682.8,
           660
-        ],
-        "population": 0,
-        "countries": []
-      },
-      {
-        "name": "UTC",
-        "abbrs": [
-          "UTC"
-        ],
-        "untils": [
-          null
-        ],
-        "offsets": [
-          0
         ],
         "population": 0,
         "countries": []
