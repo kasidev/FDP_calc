@@ -31,10 +31,30 @@ Calculate.prototype.init = function() {
 }
 
 Calculate.prototype.eta=function(maxFDP,splitIncrease,standbyDeduction){
+    
     console.log("split minutes: ",splitIncrease)
-    console.log("standby deduction:",standbyDeduction)
+    document.getElementById("splitIncrease").innerText=
+    moment.duration(splitIncrease/2,"minutes").hours() + " hours "+
+    moment.duration(splitIncrease/2,"minutes").minutes() + " minutes"
+    
+    console.log("standby deduction:",standbyDeduction,"minutes")
+    document.getElementById("stdbyDeduction").innerText=
+    moment.duration(standbyDeduction,"minutes").hours() + " hours "+
+    moment.duration(standbyDeduction,"minutes").minutes() + " minutes"
+
+    let maxFdpCalc=moment.duration(0,"minutes")
+        .subtract(standbyDeduction)
+        .add(splitIncrease/2,"minutes")
+        .add(maxFDP,'minutes')
+        
+    document.getElementById("maxFdpCalc").innerText=
+    maxFdpCalc.hours() + " hours "+
+    maxFdpCalc.minutes() + " minutes"
+
+
+    
     /**@type {moment} */
-    const momentEta=dataTimes.fdpStartMoment.add(maxFDP,'minutes')
+    const momentEta=dataTimes.fdpStartMoment.add(maxFDP,'minutes')    
     momentEta.add(splitIncrease/2,"minutes")
     momentEta.subtract(standbyDeduction)
     console.log("latest ETA [z]: ",momentEta.utc().format())

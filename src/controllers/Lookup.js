@@ -48,6 +48,11 @@ Lookup.prototype.lookupMax=function(fdpStart){
                for (const values of section.fdp_list) {
                    if (legs===values.max_sectors) {
                        console.log("max fdp [min]: ",values.max_fdp)
+                       
+                       document.getElementById("maxFdp").innerText=
+                       moment.duration(values.max_fdp,"minutes").hours() + " hours "+
+                        moment.duration(values.max_fdp,"minutes").minutes() + " minutes"
+
                        let maxFDP = values.max_fdp
                        this.events.emit("lookupCompleted",maxFDP)                 
                    }                   
