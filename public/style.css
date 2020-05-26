@@ -83,3 +83,6 @@ body.custom{
 #calculateButton:hover{
     background-color: #1d1d1d;
 }
+.valueRow{
+    width: 140px;
+}
