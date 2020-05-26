@@ -24,6 +24,7 @@
     font-family: FXMatrix;
     padding-left: 2px;
     padding-right: 0px;
+    margin-bottom: 5px;
     border: none;
 }
 
@@ -57,7 +58,7 @@ body.custom{
 }
 
 .form-group.row .timeInputCustom{
-    padding-left: 0px;
+    padding-left: 5px;
     padding-right: 0px;
 }
 
