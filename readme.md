@@ -8,7 +8,7 @@ Make Setup for UTC calculation according EASA FDP including the following:
     -calculate all times with Moment.js and the respective timezone
     -calculate all in UTC
 
-Webapp DEMO VERSION available on https://fdpcalc.kasiala.ch/
+Webapp DEMO VERSION available on http://flightDuty.kasiala.ch/
 
 ------------------------------------------------
 ###############################################
