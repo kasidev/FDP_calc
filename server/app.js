@@ -7,7 +7,7 @@ const fs = require("fs")
 const mimeTypes = require("mime-types")
 const servPublic = require("./public")
 const serverLog = require("../src/data/serverLog.json")
-const requestIp=require("request-ip")
+//const requestIp=require("request-ip")
 
 //const sanitizePath = path.normalize(parsedUrl.pathname).replace(/^(\.\.[\/\\])+/, '')
 
@@ -21,11 +21,11 @@ const app = http.createServer((req, res) => {
   const reqLog={
     "id": counter,
     "req": req,
-    "ip": requestIp.getClientIp(req)
+    //"ip": requestIp.getClientIp(req)
   }
   serverLog.push(reqLog)
   console.log(serverLog)
-  fs.writeFile('../src/data/serverLog`＄{}`.json"',serverLog)
+  //fs.writeFile('../src/data/serverLog`＄{}`.json"',serverLog)
 
   const parsedUrl = url.parse(req.url)
   console.log(parsedUrl.pathname)
@@ -56,5 +56,5 @@ const app = http.createServer((req, res) => {
 
     
 }) 
-
-app.listen(8080)
+let port = (process.env.PORT || 8080)
+app.listen(port)

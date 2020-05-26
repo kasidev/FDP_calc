@@ -27,7 +27,12 @@ function MenuControl(input_elements,depTable,arrTable,tzTable){
 }
 
 MenuControl.prototype.init=function(){
-    document.getElementById("standbystarttimeInputGroup").classList.toggle("d-none")
+    const standByGroup = document.getElementsByClassName("standbyInputGroup")
+    for (const element of standByGroup) {
+        element.classList.toggle("d-none")
+        
+    }
+
     document.getElementById("splitInputGroup").classList.toggle("d-none")
     //document.getElementById("arrivalLocationInput").addEventListener()
     on(".input-arrAirport", "keyup", (event) => {
@@ -52,9 +57,13 @@ MenuControl.prototype.init=function(){
     
     on(".standbyInputCheck", "click", (event) => {
         if(event.handleObj.checked){
-            document.getElementById("standbystarttimeInputGroup").classList.remove("d-none")}
+            for (const element of standByGroup) {
+                element.classList.remove("d-none")  
+            }}
         else{
-            document.getElementById("standbystarttimeInputGroup").classList.add("d-none")
+            for (const element of standByGroup) {
+                element.classList.add("d-none")  
+            }
         }
 
     }) 

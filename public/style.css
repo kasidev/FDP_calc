@@ -1,0 +1,77 @@
+@font-face {
+    font-family: FxMatrix;
+    src: url(./font/FXMatrix105MonoPicaRegular.woff)
+  }
+
+  @font-face {
+    font-family: Bariol-Regular;
+    src: url(./font/bariol_regular-webfont.woff)
+  }
+
+#input-col{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#result-col{
+    padding-left: 10px;
+    padding-right: 0px;
+}
+
+.form-control.custom{
+    background-color: inherit;
+    color:white;
+    font-family: FXMatrix;
+    padding-left: 0px;
+    padding-right: 0px;
+    border: none;
+}
+.form-control.custom
+
+.form-control.custom:focus{
+    color: #fff;
+    background-color: #91909096; 
+
+}
+
+body.custom{
+    font-family: Bariol-Regular;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.0rem;
+    color: silver;
+}
+
+.autoComplete{
+    font-weight: lighter;
+    color: silver;
+}
+
+.form-group.row label{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.form-group.row .dateInputCustom{
+    padding-right: 0px;
+    color: orange;
+}
+
+.form-group.row .timeInputCustom{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#result-col .customValue{
+    color: #aee8ff;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+#result-col, #result-col .table {
+    color: silver;
+}
+
+.navbar#myNav{
+    margin-bottom: 30px;
+}
