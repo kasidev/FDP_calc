@@ -22,7 +22,7 @@
     background-color: inherit;
     color:white;
     font-family: FXMatrix;
-    padding-left: 0px;
+    padding-left: 2px;
     padding-right: 0px;
     border: none;
 }
@@ -74,4 +74,13 @@ body.custom{
 
 .navbar#myNav{
     margin-bottom: 30px;
+}
+
+#calculateButton{
+    color: #fff;
+    background-color: #525252;
+}
+
+#calculateButton:hover{
+    background-color: #1d1d1d;
 }

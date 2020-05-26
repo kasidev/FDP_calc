@@ -24,7 +24,7 @@ const app = http.createServer((req, res) => {
     //"ip": requestIp.getClientIp(req)
   }
   serverLog.push(reqLog)
-  console.log(serverLog)
+  //console.log(serverLog)
   //fs.writeFile('../src/data/serverLog`＄{}`.json"',serverLog)
 
   const parsedUrl = url.parse(req.url)
@@ -34,7 +34,27 @@ const app = http.createServer((req, res) => {
     servPublic(parsedUrl,res)
     return
 
-  }else{
+  }if(parsedUrl.pathname ==="/favicon.ico"){
+    console.log("favicon request")
+    const favicoPath=path.join(__dirname, "../", "public/favicon.ico")
+
+    const icon= fs.readFile(favicoPath,(err,content) => {
+      if (err){
+        res.writeHead(404,{})
+        res.write("error")
+        res.end()
+        return
+      }res.writeHead(200, {
+        "Content-Type": mimeTypes.lookup(favicoPath)
+      })
+  
+        res.write(content)
+        res.end()
+        return
+    })
+  }
+
+  else{
     console.log("file loading error")
     const errorPath=path.join(__dirname, "../", "public/matrix.jpg")
 
