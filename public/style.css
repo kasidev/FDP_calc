@@ -19,14 +19,13 @@
 }
 
 .form-control.custom{
-    background-color: inherit;
+    background-color: #435136;
     color:white;
     font-family: FXMatrix;
     padding-left: 2px;
     padding-right: 0px;
     border: none;
 }
-.form-control.custom
 
 .form-control.custom:focus{
     color: #fff;

@@ -8,25 +8,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/public/dist/main.css" />
+    <script src="https://kit.fontawesome.com/d59bc53f15.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
     <title>FDP CALC</title>
   </head>
   <body class="custom">
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Flight time period calculator</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</span></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <br /> -->
 
     <nav id="myNav" class="navbar custom navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Flight duty period calculator</a>
@@ -36,13 +23,25 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home </a>
+            <a class="nav-link" href="/public/index.html">Home </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://www.easa.europa.eu/document-library/general-publications/easy-access-rules-air-operations#group-easa-downloads">Regulation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/kasidev/FDP_calc">About</a>
+            <a class="nav-link" href="/public/instruction.html">Description</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              About this App
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="https://github.com/kasidev/FDP_calc">Github <i class="fab fa-github"></i></a>
+              <a class="dropdown-item" href="https://www.linkedin.com/in/patrick-kasiala-48289210b">About Me <i class="fab fa-linkedin"></i></a>
+              <a class="dropdown-item" href="/public/license.html">License </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="dev@kasiala.ch">Contact Me</a>
+            </div>
           </li>
         </ul>
       </div>
@@ -81,10 +80,10 @@
                   <label class="col-md-4 col-form-label" for="standbyInput">Standby Duty :</label>
                   <div class="col-md-8">
                     <div class="row standbyInputGroup">
-                      <div class="col-md-7 col-sm-6 dateInputCustom">
+                      <div class="col-md-7 col-6 dateInputCustom">
                         <input type="date" class="form-control custom" id="standbystartdateInput" />
                       </div>
-                      <div class="col-md-5 col-sm-6  timeInputCustom">
+                      <div class="col-md-5 col-6  timeInputCustom">
                         <input type="time" class="form-control custom" id="standbystarttimeInput" />
                       </div>
                     </div>
@@ -102,10 +101,10 @@
                 <!--FDP Start-->
                 <div class="form-group row">
                   <label class="col-md-4 col-form-label" for="fdpstartdateInput">FDP Start </label>
-                  <div class="col-md-5 col-sm-4 dateInputCustom">
+                  <div class="col-md-5 col-6 dateInputCustom">
                     <input type="date" class="form-control custom" id="fdpstartDateInput" />
                   </div>
-                  <div class="col-md-3 col-sm-4 timeInputCustom">
+                  <div class="col-md-3 col-4 timeInputCustom">
                     <input type="time" class="form-control custom" id="fdpstartTimeInput" />
                   </div>       
                 </div>
@@ -165,7 +164,7 @@
           </div>
         </div>
         <div class="col-sm-12 col-md-5" id="result-col">
-          <div class="card">
+          <div id="etaCard" class="card">
             <div id="etaHeader" class="card-header">
               Latest ETA
             </div>
@@ -237,6 +236,9 @@
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="/public/dist/main.js"></script>
   </body>
