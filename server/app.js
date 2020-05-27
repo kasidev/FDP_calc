@@ -5,7 +5,7 @@ const url = require("url")
 const path = require("path")
 const fs = require("fs")
 const mimeTypes = require("mime-types")
-const servPublic = require("./public")
+const servPublic = require("./public.js")
 const serverLog = require("../src/data/serverLog.json")
 //const requestIp=require("request-ip")
 

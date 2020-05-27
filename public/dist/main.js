@@ -22527,8 +22527,13 @@ Lookup.prototype.lookupMax = function (fdpStart) {
   checkInInt = checkIn.hour() * 60;
   checkInInt += checkIn.minute();
   console.log("checkin as int minutes: ", checkInInt);
-  var legs = parseInt(this.input_elements.legs.value, 10); //iterate through easa ftl json to find the maximum flight duty period
+  var legs = parseInt(this.input_elements.legs.value, 10);
+
+  if (legs === 1) {
+    legs = 2;
+  } //iterate through easa ftl json to find the maximum flight duty period
   //in minutes
+
 
   var _iterator2 = _createForOfIteratorHelper(easaFTL),
       _step2;
