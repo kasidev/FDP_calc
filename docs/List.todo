@@ -65,19 +65,23 @@ FDP_calc 0.2:
 
     ✔ include split duty deduction @done(20-04-25 10:55)
 
-    ☐ get all timezones in the input timezone field
+    ✔ get all timezones in the input timezone field @done(20-05-27 14:18)
     moment.tz.names()
-    
 
-    ☐ Check inputs for consitency
-    e.g. split duty start before fdp start
-
-    ☐ get some nice styles and nice fonts
+    ✔ get some nice styles and nice fonts @done(20-05-27 14:18)
 
 FDP_calc 0.3:
+    
     ☐ implement a simple graphical display of the results
     use a gant chart
-    ☐ improve css and html
+
+    ☐  Check inputs for consitency
+    e.g. split duty start before fdp start
+
+    ☐ Improve folder structure
+    tidy up, arrange all public files
+
+    ☐ Improve server code
 
 
 FDP_calc 0.4:
