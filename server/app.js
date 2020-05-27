@@ -11,25 +11,21 @@ const serverLog = require("../src/data/serverLog.json")
 
 //const sanitizePath = path.normalize(parsedUrl.pathname).replace(/^(\.\.[\/\\])+/, '')
 
-let counter = 93
+let counter = 11
 const app = http.createServer((req, res) => {
 
-  counter+=1
-  console.log("requested url:",req.url)
-  console.log("domain")
   
 
-  //console.log(counter)
-  const reqLog={
-    "id": counter,
-    "req": req,
-  }
-  serverLog.push(reqLog)
-  //console.log(serverLog)
-  //fs.writeFile('../src/data/serverLog`＄{}`.json"',serverLog)
-
   const parsedUrl = url.parse(req.url,true)
+  if (parsedUrl.pathname==="/public/index.html") {
+    counter+=1
+    let now = new Date(Date.now())
+    console.log(now.toString())
+    console.log(counter)
+    
+  }
   console.log("parsedurl:",parsedUrl.pathname)
+  
   if(parsedUrl.pathname.substr(0,8)==="/public/"){
     
     servPublic(parsedUrl,res)
