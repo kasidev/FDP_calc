@@ -83,6 +83,12 @@ FDP_calc 0.3:
 
     ☐ Improve server code
 
+    ☐ Logic for inflight rest
+
+    ☐ Logic for not acclimatised crewmember
+
+    ☐ Rotation scheduler
+
 
 FDP_calc 0.4:
     ☐ try to deploy on AWS
