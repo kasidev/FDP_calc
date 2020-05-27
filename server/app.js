@@ -15,20 +15,21 @@ let counter = 93
 const app = http.createServer((req, res) => {
 
   counter+=1
-  //console.log(req.headers.host)
+  console.log("requested url:",req.url)
+  console.log("domain")
+  
+
   //console.log(counter)
-  //console.log(requestIp.getClientIp(req))
   const reqLog={
     "id": counter,
     "req": req,
-    //"ip": requestIp.getClientIp(req)
   }
   serverLog.push(reqLog)
   //console.log(serverLog)
   //fs.writeFile('../src/data/serverLog`＄{}`.json"',serverLog)
 
-  const parsedUrl = url.parse(req.url)
-  console.log(parsedUrl.pathname)
+  const parsedUrl = url.parse(req.url,true)
+  console.log("parsedurl:",parsedUrl.pathname)
   if(parsedUrl.pathname.substr(0,8)==="/public/"){
     
     servPublic(parsedUrl,res)
